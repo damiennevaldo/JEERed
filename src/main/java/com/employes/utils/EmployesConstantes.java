@@ -20,7 +20,6 @@ public final class EmployesConstantes {
     public static final String ACTION_VOIR_AJOUTER = "VoirAjouter";
     public static final String ACTION_VOIR_AJOUTER_5 = "VoirAjouter5";
     public static final String ACTION_LOGIN = "Login";
-    public static final String ACTION_QUITTER = "Quitter";
     public static final String ACTION_ANNULER = "Annuler";
 
     //Constantes représentant les input de type text ou radio
@@ -73,5 +72,4 @@ public final class EmployesConstantes {
     public static final String PAGE_CHOIX = "WEB-INF/View/choix.jsp";
     public static final String PAGE_AJOUTER_UN_EMPLOYE = "WEB-INF/View/ajouterUnEmploye.jsp";
     public static final String PAGE_AJOUTER_5_EMPLOYES = "WEB-INF/View/ajouter5Employes.jsp";
-
 }

@@ -82,7 +82,6 @@ public class Controleur extends HttpServlet {
                     break;
 
                 case EmployesConstantes.ACTION_AJOUTER:
-
                     employe = creerEmploye(request);
                     connexionPersistence.ajouterEmployes(employe);
                     listeEmployes.clear();
@@ -90,7 +89,25 @@ public class Controleur extends HttpServlet {
                     request.setAttribute("cleListeEmployes", listeEmployes);
                     request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
                     break;
-
+                    
+//                case EmployesConstantes.ACTION_AJOUTER:
+//                    employe = new Employes(
+//                            request.getParameter(EmployesConstantes.CHAMP_NOM),
+//                            request.getParameter(EmployesConstantes.CHAMP_PRENOM),
+//                            request.getParameter(EmployesConstantes.CHAMP_TELDOMICILE),
+//                            request.getParameter(EmployesConstantes.CHAMP_TELPORTABLE),
+//                            request.getParameter(EmployesConstantes.CHAMP_TELPRO),
+//                            request.getParameter(EmployesConstantes.CHAMP_ADRESSE),
+//                            request.getParameter(EmployesConstantes.CHAMP_CODEPOSTAL),
+//                            request.getParameter(EmployesConstantes.CHAMP_VILLE),
+//                            request.getParameter(EmployesConstantes.CHAMP_EMAIL));
+//                    connexionPersistence.ajouterEmployes(employe);
+//                    listeEmployes.clear();
+//                    listeEmployes.addAll(connexionPersistence.getEmployes());
+//                    request.setAttribute("cleListeEmployes", listeEmployes);
+//                    request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
+//                    break;
+//                    
                 case EmployesConstantes.ACTION_SUPPRIMER:
                     if (request.getParameter(idEmploye) != null) {
                         int i = 0;
@@ -102,8 +119,10 @@ public class Controleur extends HttpServlet {
                         } else if (i > 0) {
                             request.setAttribute("cleMessageSuppr", EmployesConstantes.SUCCES_SUPPR);
                             request.setAttribute("cleCouleur", "green");
+
                         }
                         listeEmployes.clear();
+
                         listeEmployes.addAll(connexionPersistence.getEmployes());
                         request.setAttribute("cleListeEmployes", listeEmployes);
                         request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
@@ -190,10 +209,6 @@ public class Controleur extends HttpServlet {
                     listeEmployes.addAll(connexionPersistence.getEmployes());
                     request.setAttribute("cleListeEmployes", listeEmployes);
                     request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
-                    break;
-
-                case EmployesConstantes.ACTION_QUITTER:
-                    request.getRequestDispatcher(EmployesConstantes.PAGE_INDEX).forward(request, response);
                     break;
 
                 case EmployesConstantes.ACTION_ANNULER:

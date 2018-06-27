@@ -56,20 +56,30 @@
                         </table>
                         <input type="submit" name="action" value="Details" class="btn btn-primary"/>
                         <!--bouton supprimer avec message conditionnel--> 
-                        <input type="submit" name="action" value="Supprimer" class="btn btn-primary"/>
+                        <input type="submit" id="a" name="action" value="Supprimer" class="btn btn-primary"/>
                         <button type="submit" name="action" value="VoirAjouter" class="btn btn-primary">Ajouter</button>
                         <p><font color="${cleCouleur}"> ${cleMessageSuppr} </font></p>
-                    </c:if> 
-                    
+                        </c:if> 
+
                     <!--bouton conditionnel supprimer-->
                     <c:if test="${empty cleListeEmployes}">
                         <button type="submit" name="action" value="VoirAjouter" class="btn btn-primary">Ajouter</button>
                         <button type="submit" name="action" value="VoirAjouter5" class="btn btn-default">Ajouter 5 employés</button>
-                        <br /> <h2><font color="red"> /!\ L'entreprise a besoin de recruter /!\</font></h2>
+                        <br /> <h2><font color="red"> L'entreprise a besoin de recruter !</font></h2>
                         </c:if>
-                        <button type="submit" name="action" value="Quitter" class="btn btn-warning">Quitter</button>
                 </form>
             </div>
-        </div>         
+        </div>        
     </body>
+
+    <script type="text/javascript">
+        var btn = document.getElementById('a');
+
+        btn.addEventListener('click', disableBtn);
+
+        function disableBtn() {
+            window.setTimeout(function () {
+                btn.disabled = true;
+            }, 0);
+        }</script>
 </html>

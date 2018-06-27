@@ -22,8 +22,6 @@
 
         <button type="submit" name="action" value="VoirListe" class="btn btn-primary">Voir la liste des employés</button>
         <button type="submit" name="action" value="VoirAjouter" class="btn btn-primary">Ajouter un employé</button>
-        <button type="submit" name="action" value="Quitter" class="btn btn-warning">Quitter</button>
-
     </form>
 </body>
 </html>

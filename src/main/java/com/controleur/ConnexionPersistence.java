@@ -3,7 +3,6 @@ package com.controleur;
 import com.employes.utils.EmployesConstantes;
 import static com.employes.utils.EmployesConstantes.*;
 import com.model.Employes;
-import java.util.ArrayList;
 import java.util.Collection;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -74,6 +73,31 @@ public class ConnexionPersistence {
             this.persist(e);
         }
     }
+    
+//    public boolean ajouterEmployes(Employes empl) {
+//        // le boolean envoie un message conditionnel
+//        boolean test = false;
+//        Employes employe = new Employes();
+//
+//        employe.setPrenom(empl.getPrenom());
+//        employe.setNom(empl.getNom());
+//        employe.setAdresse(empl.getAdresse());
+//        employe.setCodepostal(empl.getCodepostal());
+//        employe.setEmail(empl.getEmail());
+//        employe.setTeldom(empl.getTeldom());
+//        employe.setTelport(empl.getTelport());
+//        employe.setTelpro(empl.getTelpro());
+//        employe.setVille(empl.getVille());
+//
+//        // filtres pour renseigner les champs sur la taille et empeche d'enregistrer sans nom, prénom ou adresse
+//        if (empl.getNom().length() < 25 && empl.getPrenom().length() < 25 && empl.getAdresse().length() < 100 && empl.getCodepostal().length() < 15 && empl.getEmail().length() < 35 && empl.getTeldom().length() < 15 && empl.getTelport().length() < 15 && empl.getTelpro().length() < 15 && empl.getVille().length() < 25
+//                && (!empl.getNom().equals("") || !empl.getPrenom().equals("") || !empl.getEmail().equals(("")))) {
+//            test = true;
+//            this.persist(employe);
+//
+//        }
+//        return test;
+//    }
 
     public void ajouter5Employes(Employes employe) {
         Query q = em.createNativeQuery(EmployesConstantes.REQUEST_AJOUTER_5_EMPLOYES);

@@ -32,10 +32,10 @@
                         <form action="Controleur" method="post">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Login" name="login" autofocus="">
+                                    <input class="form-control" placeholder="Login" name="login" autofocus="" maxlength="25">
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Mot de passe" name="mdp" type="password">
+                                    <input class="form-control" placeholder="Mot de passe" name="mdp" type="password" maxlength="25">
                                 </div>
                                 <input type="submit" name="action" value="Login" class="btn btn-primary"/>
                             </fieldset>

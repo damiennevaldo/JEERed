@@ -23,69 +23,67 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Nom</label>
                             <div class="col-sm-10">
-                                <input type="text" name="frmNom" value="${employe.nom}"   class="form-control">
+                                <input type="text" name="frmNom" value="${employe.nom}" class="form-control" maxlength="25">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Prénom</label>
                             <div class="col-sm-10">
-                                <input type="text" name="frmPrenom"  value="${employe.prenom}"  class="form-control">
+                                <input type="text" name="frmPrenom"  value="${employe.prenom}"  class="form-control" maxlength="25">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Tél dom</label>
                             <div class="col-sm-10">
-                                <input type="text" name="frmTelDomicile" value="${employe.teldom}"  class="form-control">
+                                <input type="text" name="frmTelDomicile" value="${employe.teldom}"  class="form-control" maxlength="10">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Tél mob</label>
                             <div class="col-sm-10">
-                                <input type="text" name="frmTelPortable" value="${employe.telport}"  class="form-control">
+                                <input type="text" name="frmTelPortable" value="${employe.telport}"  class="form-control" maxlength="10">
                             </div>
                         </div>                      
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Tél pro</label>
                             <div class="col-sm-10">
-                                <input type="text" name="frmTelPro" value="${employe.telpro}"  class="form-control">
+                                <input type="text" name="frmTelPro" value="${employe.telpro}"  class="form-control" maxlength="10">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Adresse</label>
                             <div class="col-sm-4">
-                                <input type="text" name="frmAdresse" value="${employe.adresse}"   class="form-control">
+                                <input type="text" name="frmAdresse" value="${employe.adresse}"   class="form-control" maxlength="25">
                             </div>
 
                             <label class="col-sm-2 control-label" for="textinput">Code postal</label>
                             <div class="col-sm-4">
-                                <input type="text" name="frmCodePostal" value="${employe.codepostal}" class="form-control">
+                                <input type="text" name="frmCodePostal" value="${employe.codepostal}" class="form-control" maxlength="15">
                             </div>
                         </div>
 
                         <label class="col-sm-2 control-label" for="textinput">Ville</label>
                         <div class="col-sm-4">
-                            <input type="text" name="frmVille" value="${employe.ville}" class="form-control">
+                            <input type="text" name="frmVille" value="${employe.ville}" class="form-control" maxlength="25">
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Adresse e-mail</label>
                             <div class="col-sm-4">
-                                <input type="text" name="frmEmail" value="${employe.email}"  class="form-control">
+                                <input type="text" name="frmEmail" value="${employe.email}"  class="form-control" maxlength="25">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <div class="pull-right">
-                                    <button type="submit" name="action" value="Modifier" class="btn btn-primary">Modifier</button>
+                                    <button type="submit" id="a" name="action" value="Modifier" class="btn btn-primary">Modifier</button>
                                     <button type="submit" name="action" value="VoirListe" class="btn btn-default" >Voir liste</button>
-                                    <button type="submit" name="action" value="Quitter" class="btn btn-warning">Quitter</button>
-
                                 </div>
                             </div>
                         </div>
@@ -95,4 +93,15 @@
             </div>
         </div>
     </body>
+
+    <script type="text/javascript">
+        var btn = document.getElementById('a');
+
+        btn.addEventListener('click', disableBtn);
+
+        function disableBtn() {
+            window.setTimeout(function () {
+                btn.disabled = true;
+            }, 0);
+        }</script>
 </html>
