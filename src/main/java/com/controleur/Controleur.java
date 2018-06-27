@@ -138,7 +138,7 @@ public class Controleur extends HttpServlet {
                         connexionPersistence.ajouter5Employes(employe);
                     }
 
-                    employe = new Employes();
+                    employe = new Employes(); 
                     employe.setNom(request.getParameter("frmNom2"));
                     employe.setPrenom(request.getParameter("frmPrenom2"));
                     employe.setEmail(request.getParameter("frmEmail2"));
