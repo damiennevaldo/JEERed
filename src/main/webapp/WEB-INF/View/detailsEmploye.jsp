@@ -58,7 +58,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Adresse</label>
                             <div class="col-sm-4">
-                                <input type="text" name="frmAdresse" value="${employe.adresse}"   class="form-control" maxlength="25">
+                                <input type="text" name="frmAdresse" value="${employe.adresse}"   class="form-control" maxlength="150">
                             </div>
 
                             <label class="col-sm-2 control-label" for="textinput">Code postal</label>

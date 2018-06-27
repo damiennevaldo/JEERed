@@ -59,7 +59,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Adresse</label>
                             <div class="col-sm-4">
-                                <input type="text" name="frmAdresse" class="form-control" maxlength="25">
+                                <input type="text" name="frmAdresse" class="form-control" maxlength="150">
                             </div>
 
                             <label class="col-sm-2 control-label" for="textinput">Code postal</label>
@@ -97,11 +97,15 @@
     <script type="text/javascript">
         var btn = document.getElementById('a');
 
-        btn.addEventListener('mouseup', disableBtn);
+        btn.addEventListener('click', disableBtn);
 
         function disableBtn() {
-            window.setTimeout(function () { btn.disabled = true;}, 0);
-            window.setTimeout(function () { btn.disabled = false;}, 2000);
+            window.setTimeout(function () {
+                btn.disabled = true;
+            }, 0);
+            window.setTimeout(function () {
+                btn.disabled = false;
+            }, 2000);
         }</script>
 </html>
 

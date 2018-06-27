@@ -81,8 +81,26 @@ public class Controleur extends HttpServlet {
                     request.getRequestDispatcher(EmployesConstantes.PAGE_AJOUTER_UN_EMPLOYE).forward(request, response);
                     break;
 
+//                case EmployesConstantes.ACTION_AJOUTER:
+//                    employe = creerEmploye(request);
+//                    connexionPersistence.ajouterEmployes(employe);
+//                    listeEmployes.clear();
+//                    listeEmployes.addAll(connexionPersistence.getEmployes());
+//                    request.setAttribute("cleListeEmployes", listeEmployes);
+//                    request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
+//                    break;
+                    
                 case EmployesConstantes.ACTION_AJOUTER:
-                    employe = creerEmploye(request);
+                    employe = new Employes(
+                            request.getParameter(EmployesConstantes.CHAMP_NOM),
+                            request.getParameter(EmployesConstantes.CHAMP_PRENOM),
+                            request.getParameter(EmployesConstantes.CHAMP_TELDOMICILE),
+                            request.getParameter(EmployesConstantes.CHAMP_TELPORTABLE),
+                            request.getParameter(EmployesConstantes.CHAMP_TELPRO),
+                            request.getParameter(EmployesConstantes.CHAMP_ADRESSE),
+                            request.getParameter(EmployesConstantes.CHAMP_CODEPOSTAL),
+                            request.getParameter(EmployesConstantes.CHAMP_VILLE),
+                            request.getParameter(EmployesConstantes.CHAMP_EMAIL));
                     connexionPersistence.ajouterEmployes(employe);
                     listeEmployes.clear();
                     listeEmployes.addAll(connexionPersistence.getEmployes());
@@ -90,24 +108,6 @@ public class Controleur extends HttpServlet {
                     request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
                     break;
                     
-//                case EmployesConstantes.ACTION_AJOUTER:
-//                    employe = new Employes(
-//                            request.getParameter(EmployesConstantes.CHAMP_NOM),
-//                            request.getParameter(EmployesConstantes.CHAMP_PRENOM),
-//                            request.getParameter(EmployesConstantes.CHAMP_TELDOMICILE),
-//                            request.getParameter(EmployesConstantes.CHAMP_TELPORTABLE),
-//                            request.getParameter(EmployesConstantes.CHAMP_TELPRO),
-//                            request.getParameter(EmployesConstantes.CHAMP_ADRESSE),
-//                            request.getParameter(EmployesConstantes.CHAMP_CODEPOSTAL),
-//                            request.getParameter(EmployesConstantes.CHAMP_VILLE),
-//                            request.getParameter(EmployesConstantes.CHAMP_EMAIL));
-//                    connexionPersistence.ajouterEmployes(employe);
-//                    listeEmployes.clear();
-//                    listeEmployes.addAll(connexionPersistence.getEmployes());
-//                    request.setAttribute("cleListeEmployes", listeEmployes);
-//                    request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
-//                    break;
-//                    
                 case EmployesConstantes.ACTION_SUPPRIMER:
                     if (request.getParameter(idEmploye) != null) {
                         int i = 0;
